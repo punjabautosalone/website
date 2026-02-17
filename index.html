@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjab Auto Salone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">Punjab Auto Salone</a>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#inventory" class="nav-link">Auto</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#contact" class="nav-link">Conttaci</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="page-section">
+            <div class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Trova l’auto dei tuoi sogni</h1>
+        <p>
+            Esplora la nostra selezione accurata di veicoli usati di qualità 
+            e parti alla guida con il sorriso.
+        </p>
+        <a href="#inventory" class="btn">Auto in vendita</a>
+    </div>
+</div>
+
+            <div class="container">
+                <h2>Offerte speciali</h2>
+                <div class="featured-cars-grid">
+                    <!-- Featured car cards will be dynamically loaded here by JavaScript -->
+                </div>
+                <!-- SERVIZI OFFICINA -->
+<section class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Officina Specializzata</h2>
+            <p>Servizi professionali per garantire sicurezza, affidabilità e prestazioni alla tua auto.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <img src="assets/images/meccanico.jpg" alt="Meccanico">
+                <div class="service-content">
+                    <h3>Meccanico</h3>
+                    <p>Tagliandi, riparazioni complete, diagnosi motore e manutenzione ordinaria e straordinaria.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/images/elettrauto.jpg" alt="Elettrauto">
+                <div class="service-content">
+                    <h3>Elettrauto</h3>
+                    <p>Diagnosi elettronica, centraline, sensori, impianti elettrici e sistemi di illuminazione.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/images/gommista.jpg" alt="Gommista">
+                <div class="service-content">
+                    <h3>Gommista</h3>
+                    <p>Sostituzione pneumatici, equilibratura, convergenza e deposito gomme stagionale.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/images/batteria.jpg" alt="Cambio Batterie">
+                <div class="service-content">
+                    <h3>Cambio Batterie</h3>
+                    <p>Sostituzione batterie con controllo completo dell’impianto di ricarica.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- CONTATTI HOME -->
+<section class="home-contact-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contattaci</h2>
+            <p>Siamo a tua disposizione per informazioni, preventivi e appuntamenti.</p>
+        </div>
+
+        <div class="home-contact-grid">
+
+            <div class="home-contact-card">
+                <h3>📞 Telefoni</h3>
+                <p>+39 123455670</p>
+                <p>+39 987654321</p>
+            </div>
+
+            <div class="home-contact-card">
+                <h3>📧 Email</h3>
+                <p>info@punjabautosalone.it</p>
+            </div>
+
+            <div class="home-contact-card">
+                <h3>📍 Indirizzo</h3>
+                <p>Via Roma 123</p>
+                <p>Milano, Italia</p>
+            </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+            <a href="#contact" class="btn">Vai alla sezione completa</a>
+        </div>
+
+    </div>
+</section>
+            </div>
+        </section>
+
+
+        
+        <!-- Inventory Section -->
+        <section id="inventory" class="page-section hidden-section">
+            <div class="container">
+                <h2>Auto in vendita</h2>
+                <div class="inventory-grid">
+                    <!-- All car cards will be dynamically loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Car Details Section -->
+        <section id="car-details" class="page-section hidden-section">
+            <div class="container car-details-container">
+                <div class="car-details-header">
+                    <h1 id="car-title"></h1>
+                    <p class="price" id="car-price"></p>
+                </div>
+
+                <div class="image-gallery">
+                    <div class="main-image-display">
+                        <img id="main-car-image" src="" alt="Main car image">
+                        <button id="prev-image-btn" class="gallery-nav-btn">&lt;</button>
+                        <button id="next-image-btn" class="gallery-nav-btn">&gt;</button>
+                    </div>
+                    <div id="thumbnail-container" class="thumbnail-container">
+                        <!-- Thumbnails will be dynamically loaded here -->
+                    </div>
+                </div>
+
+                <div class="car-details-content">
+                    <div class="car-description">
+                        <h3>Descrizione</h3>
+                        <p id="car-full-description"></p>
+                        <p><strong>Chilometraggio:</strong> <span id="car-mileage"></span></p>
+                        <p><strong>Tel: +39 123455670</strong></p>
+                    </div>
+                    
+                    <div class="car-specifications">
+                        <h3>Specifiche</h3>
+                        <ul id="car-specifications">
+                            <!-- Specifications will be dynamically loaded here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="car-details-contact">
+                    <a href="#contact" class="btn">Conttaci</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="page-section hidden-section">
+            <div class="container">
+                <h2>Chi siamo?</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>La nostra storia</h3>
+                        <p>Devv Motors è nata da una profonda passione per le automobili e da un forte impegno verso la soddisfazione del cliente. Crediamo che acquistare un’auto debba essere un’esperienza emozionante, trasparente e senza stress. Il nostro team seleziona con cura ogni veicolo, assicurandosi che rispetti i nostri elevati standard di qualità, sicurezza e prestazioni.</p>
+                        <p>Con anni di esperienza nel settore automobilistico, ci distinguiamo per la capacità di creare rapporti duraturi con i nostri clienti, offrendo consulenza professionale e un servizio personalizzato. Non vendiamo semplicemente auto: ti aiutiamo a trovare il veicolo perfetto per il tuo stile di vita e il tuo budget.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/images/about-us.jpg" alt="Our Team at Punjab Auto Salone">
+                    </div>
+                </div>
+                <div class="about-content" style="margin-top: 40px;">
+                    <div class="about-image">
+                        <img src="assets/images/mission.jpg" alt="Our Mission">
+                    </div>
+                    <div class="about-text">
+                        <h3>Cosa facciamo?</h3>
+                        <p>La nostra missione è essere la concessionaria più affidabile della regione, rinomata per la nostra integrità, il servizio eccezionale e l’ampia gamma di veicoli di alta qualità. Ci impegniamo a rendere l’esperienza di acquisto dell’auto semplice e piacevole per ogni cliente, dalla consultazione alla finanziamento e oltre.</p>
+                        <p>Siamo dedicati a creare una comunità di automobilisti soddisfatti e a migliorare continuamente i nostri servizi per superare le aspettative. La vostra soddisfazione è la nostra forza motrice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+         <section id="contact" class="page-section hidden-section">
+    <div class="container">
+        <h2>Contatti</h2>
+
+        <!-- INFO CONTATTI -->
+        <div class="contact-info-grid">
+
+            <div class="contact-box">
+                <h3>📞 Telefoni</h3>
+                <p>+39 123455670</p>
+                <p>+39 987654321</p>
+            </div>
+
+            <div class="contact-box">
+                <h3>📧 Email</h3>
+                <p>info@punjabautosalone.it</p>
+            </div>
+
+            <div class="contact-box">
+                <h3>📍 Indirizzo</h3>
+                <p>Via Roma 123</p>
+                <p>Milano, Italia</p>
+            </div>
+
+            <div class="contact-box">
+                <h3>🕒 Orari</h3>
+                <p>Lun - Ven: 8:30 - 18:30</p>
+                <p>Sabato: 8:30 - 13:00</p>
+                <p>Domenica: Chiuso</p>
+            </div>
+
+        </div>
+
+        <!-- MAPPA GOOGLE -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps?q=Via+Roma+123+Milano&output=embed"
+                width="100%" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- FORM CONTATTI -->
+        <div class="contact-form-wrapper">
+            <h3>Scrivici un messaggio</h3>
+
+            <form action="https://formsubmit.co/singh23247@iistorriani.it" method="POST" class="contact-form">
+
+                <input type="hidden" name="_subject" value="Nuovo Messaggio dal Sito Web">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <input type="text" name="name" placeholder="Nome e Cognome" required>
+                <input type="tel" name="tel" placeholder="Telefono" required>
+                <input type="email" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Scrivi il tuo messaggio..." required></textarea>
+
+                <button type="submit" class="btn">Invia Messaggio</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 Punjab Auto Salone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mock Car Data ---
+        const cars = [
+            {
+                id: 1,
+                year: 2022,
+                brand: "Toyota",
+                model: "Camry SE",
+                price: 28500,
+                mileage: 15000,
+                shortDescription: "A reliable and stylish sedan perfect for daily commutes.",
+                fullDescription: "The 2022 Toyota Camry SE offers a perfect blend of performance, comfort, and fuel efficiency. With its sporty exterior and refined interior, it's designed to make every drive enjoyable. Features include advanced safety systems, a user-friendly infotainment system, and a spacious cabin.",
+                thumbnail: "assets/images/1.jpg",
+                images: [
+                    "assets/images/1.jpg",
+                    "assets/images/2.jpg",
+                    "assets/images/3.jpg",
+                    "assets/images/4.jpg"
+                ],
+                specifications: {
+                    motore: "2.5L 4-Cylinder",
+                    cambio: "8-Speed Automatic",
+                    carburante: "Gasoline",
+                    potenza: "203 hp",
+                    trazione: "FWD"
+                }
+            },
+            {
+                id: 2,
+                year: 2023,
+                brand: "Honda",
+                model: "CR-V EX-L",
+                price: 35000,
+                mileage: 8000,
+                shortDescription: "Spacious and versatile SUV, ideal for families and adventurers.",
+                fullDescription: "The 2023 Honda CR-V EX-L combines practicality with premium features. Enjoy a comfortable ride, ample cargo space, and advanced technology. This model comes with leather-trimmed seats, a power tailgate, and Honda Sensing® safety suite, ensuring peace of mind on every journey.",
+                thumbnail: "assets/images/2.jpg",
+                images: [
+                    "assets/images/1.jpg",
+                    "assets/images/2.jpg",
+                    "assets/images/3.jpg",
+                    "assets/images/4.jpg"
+                ],
+                specifications: {
+                    motore: "2.0L Turbo 4-Cylinder",
+                    cambio: "9-Speed Automatic",
+                    carburante: "Gasoline",
+                    potenza: "255 hp",
+                    trazione: "RWD"
+                }
+            },
+            {
+                id: 3,
+                year: 2021,
+                brand: "Ford",
+                model: "F-150 XLT",
+                price: 42000,
+                mileage: 25000,
+                shortDescription: "America's best-selling truck, built for tough jobs and everyday life.",
+                fullDescription: "The 2021 Ford F-150 XLT is a powerhouse designed to handle anything you throw at it. With impressive towing capabilities, a comfortable interior, and advanced technology, it's the perfect truck for work or play. This XLT model includes chrome exterior accents, SYNC 4 infotainment, and a robust V6 motore.",
+                thumbnail: "assets/images/3.jpg",
+                images: [
+                    "assets/images/1.jpg",
+                    "assets/images/2.jpg",
+                    "assets/images/3.jpg",
+                    "assets/images/4.jpg"
+                ],
+                specifications: {
+                    motore: "2.0L Turbo 4-Cylinder",
+                    cambio: "9-Speed Automatic",
+                    carburante: "Gasoline",
+                    potenza: "255 hp",
+                    trazione: "RWD"
+                }
+            },
+            {
+                id: 4,
+                year: 2024,
+                brand: "Tesla",
+                model: "Model 3 Long Range",
+                price: 52000,
+                mileage: 2000,
+                shortDescription: "Experience the future of driving with this all-electric, high-performance sedan.",
+                fullDescription: "The 2024 Tesla Model 3 Long Range offers exhilarating performance, cutting-edge technology, and an impressive electric range. Enjoy instant torque, a minimalist interior design, and access to Tesla's Supercharger network. This model features dual-motor all-wheel drive and a premium interior.",
+                thumbnail: "assets/images/4.jpg",
+                images: [
+                    "assets/images/4.jpg",
+                    "assets/images/1.jpg",
+                    "assets/images/3.jpg",
+                    "assets/images/4.jpg"
+                ],
+                specifications: {
+                    motore: "2.0L Turbo 4-Cylinder",
+                    cambio: "9-Speed Automatic",
+                    carburante: "Gasoline",
+                    potenza: "255 hp",
+                    trazione: "RWD"
+                }
+            },
+            {
+                id: 5,
+                year: 2022,
+                brand: "BMW",
+                model: "X5 xDrive40i",
+                price: 68000,
+                mileage: 18000,
+                shortDescription: "Luxury SUV combining sophisticated design with powerful performance.",
+                fullDescription: "The 2022 BMW X5 xDrive40i delivers a premium driving experience with its powerful motore, luxurious interior, and advanced technology. Perfect for those who demand both elegance and capability. Features include iDrive infotainment, panoramic sunroof, and adaptive suspension.",
+                thumbnail: "assets/images/5.jpg",
+                images: [
+                    "assets/images/1.jpg",
+                    "assets/images/2.jpg",
+                    "assets/images/3.jpg",
+                    "assets/images/4.jpg"
+                ],
+                specifications: {
+                    motore: "2.0L Turbo 4-Cylinder",
+                    cambio: "9-Speed Automatic",
+                    carburante: "Gasoline",
+                    potenza: "255 hp",
+                    trazione: "RWD"
+                }
+            },
+            {
+                id: 6,
+                year: 2023,
+                brand: "Mercedes-Benz",
+                model: "C-Class C300",
+                price: 49000,
+                mileage: 316422523,
+                shortDescription: "Elegant and technologically advanced luxury sedan.",
+                fullDescription: "The 2023 Mercedes-Benz C-Class C300 redefines luxury with its sophisticated design, cutting-edge technology, and exhilarating performance. Experience unparalleled comfort and innovation. This model boasts a MBUX infotainment system, ambient lighting, and a turbocharged motore.",
+                thumbnail: "assets/images/6.jpg",
+                images: [
+                    "assets/images/1.jpg",
+                    "assets/images/2.jpg",
+                    "assets/images/3.jpg",
+                    "assets/images/4.jpg"
+                ],
+                specifications: {
+                    motore: "2.0L Turbo 4-Cylinder",
+                    cambio: "9-Speed Automatic",
+                    carburante: "Gasoline",
+                    potenza: "255 hp",
+                    trazione: "RWD"
+                }
+            }
+        ];
+
+        // --- Global Utility Functions ---
+
+        /**
+         * Toggles the visibility of the mobile navigation menu.
+         */
+        function toggleHamburgerMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger-menu');
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        /**
+         * Formats a number as currency.
+         * @param {number} amount - The number to format.
+         * @returns {string} The formatted currency string.
+         */
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0, // No cents for car prices
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        /**
+         * Formats a number with commas for mileage.
+         * @param {number} num - The number to format.
+         * @returns {string} The formatted number string.
+         */
+        function formatNumber(num) {
+            return new Intl.NumberFormat('en-US').format(num);
+        }
+
+        // --- Page-Specific Logic ---
+
+        /**
+         * Renders a car card for display on inventory or featured sections.
+         * @param {object} car - The car object.
+         * @returns {HTMLElement} The created car card element.
+         */
+        function createCarCard(car) {
+            const carCard = document.createElement('div');
+            carCard.classList.add('car-card');
+            carCard.innerHTML = `
+                <img src="${car.thumbnail}" alt="${car.brand} ${car.model}" loading="lazy">
+                <div class="car-info">
+                    <h3>${car.year} ${car.brand} ${car.model}</h3>
+                    <p class="price">€ ${car.price.toLocaleString('it-IT')}</p>
+
+                    <p class="mileage">${formatNumber(car.mileage)} km</p>
+                    <p class="description">${car.shortDescription}</p>
+                    <a href="#car-details?id=${car.id}" class="btn view-details-btn">Dettagli</a>
+                </div>
+            `;
+            return carCard;
+        }
+
+        /**
+         * Displays featured cars on the home page.
+         */
+        function displayFeaturedCars() {
+            const featuredCarsContainer = document.querySelector('.featured-cars-grid');
+            if (featuredCarsContainer) {
+                featuredCarsContainer.innerHTML = ''; // Clear previous content
+                // Display the first 3 cars as featured
+                cars.slice(0, 3).forEach(car => {
+                    featuredCarsContainer.appendChild(createCarCard(car));
+                });
+            }
+        }
+
+        /**
+         * Displays all cars on the inventory page.
+         */
+        function displayInventory() {
+            const inventoryContainer = document.querySelector('.inventory-grid');
+            if (inventoryContainer) {
+                inventoryContainer.innerHTML = ''; // Clear previous content
+                cars.forEach(car => {
+                    inventoryContainer.appendChild(createCarCard(car));
+                });
+            }
+        }
+
+        let autoSlideInterval; // Declare globally to manage across calls miles
+
+        /**
+         * Initializes the image gallery on the car details page.
+         * @param {Array<string>} images - Array of image URLs for the car.
+         */
+        function initImageGallery(images) {
+            const mainImage = document.getElementById('main-car-image');
+            const thumbnailsContainer = document.getElementById('thumbnail-container');
+            const prevBtn = document.getElementById('prev-image-btn');
+            const nextBtn = document.getElementById('next-image-btn');
+
+            // Stop any existing auto-slide interval before re-initializing
+            stopAutoSlide();
+
+            if (!mainImage || !thumbnailsContainer || !images || images.length === 0) {
+                mainImage.src = ''; // Clear image if no images
+                thumbnailsContainer.innerHTML = ''; // Clear thumbnails
+                return; // Exit if elements or images are missing
+            }
+
+            let currentIndex = 0;
+
+            function updateGallery() {
+                mainImage.src = images[currentIndex];
+                // Remove active class from all thumbnails and add to current
+                Array.from(thumbnailsContainer.children).forEach((thumb, index) => {
+                    thumb.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateGallery();
+            }
+
+            function showPrevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateGallery();
+            }
+
+            function startAutoSlide() {
+                stopAutoSlide(); // Clear any existing interval
+                autoSlideInterval = setInterval(showNextImage, 5000); // Change image every 5 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            function resetAutoSlide() {
+                stopAutoSlide();
+                startAutoSlide();
+            }
+
+            // Create thumbnails
+            thumbnailsContainer.innerHTML = ''; // Clear existing thumbnails
+            images.forEach((imgSrc, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = imgSrc;
+                thumbnail.alt = `Car image ${index + 1}`;
+                thumbnail.classList.add('thumbnail');
+                if (index === 0) {
+                    thumbnail.classList.add('active');
+                }
+                thumbnail.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateGallery();
+                    resetAutoSlide();
+                });
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+
+            // Event listeners for navigation buttons
+            if (prevBtn) prevBtn.onclick = () => { showPrevImage(); resetAutoSlide(); };
+            if (nextBtn) nextBtn.onclick = () => { showNextImage(); resetAutoSlide(); };
+
+            // Initialize gallery
+            updateGallery();
+            if (images.length > 1) { // Only auto-slide if there's more than one image
+                startAutoSlide();
+            }
+        }
+
+        /**
+         * Displays details of a specific car on the car details page.
+         * @param {number} carId - The ID of the car to display.
+         */
+        function displayCarDetails(carId) {
+            const car = cars.find(c => c.id === carId);
+
+            if (!car) {
+                document.querySelector('.car-details-container').innerHTML = '<p>Car not found.</p>';
+                return;
+            }
+
+            document.getElementById('car-title').textContent = `${car.year} ${car.brand} ${car.model}`;
+            document.getElementById('car-price').textContent = formatCurrency(car.price);
+            document.getElementById('car-full-description').textContent = car.fullDescription;
+            document.getElementById('car-mileage').textContent = `${formatNumber(car.mileage)}`;
+
+            const specsList = document.getElementById('car-specifications');
+            specsList.innerHTML = ''; // Clear previous specs
+            for (const [key, value] of Object.entries(car.specifications)) {
+                const listItem = document.createElement('li');
+                // Format key for display (e.g., "carburante" -> "Fuel Type")
+                const formattedKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+                listItem.innerHTML = `<strong>${formattedKey}:</strong> ${value}`;
+                specsList.appendChild(listItem);
+            }
+
+            // Initialize the image gallery for this car
+            initImageGallery(car.images);
+        }
+
+        /**
+         * Basic validation for the contact form.
+         * @param {Event} event - The form submission event.
+         */
+        function validateContactForm(event) {
+            event.preventDefault(); // Prevent actual form submission for static site
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const tel = document.getElementById('tel').value.trim();
+            const formMessage = document.getElementById('form-message');
+
+            formMessage.textContent = ''; // Clear previous messages
+            formMessage.classList.remove('success', 'error');
+
+            if (name === '' || tel === '' || message === '') {
+                formMessage.textContent = 'All fields are required.';
+                formMessage.classList.add('error');
+                return false;
+            }
+
+            // Basic email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.classList.add('error');
+                return false;
+            }
+
+            formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+            formMessage.classList.add('success');
+            document.getElementById('contact-form').reset(); // Clear form fields
+            return true;
+        }
+
+        /**
+         * Handles navigation between sections based on URL hash.
+         */
+        function handleNavigation() {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.add('hidden-section')); // Hide all sections
+
+            const hash = window.location.hash;
+            let targetSectionId = 'home'; // Default to home page
+
+            if (hash) {
+                // Check for car details hash first, as it has parameters
+                if (hash.startsWith('#car-details')) {
+                    const urlParams = new URLSearchParams(hash.split('?')[1]);
+                    const carId = parseInt(urlParams.get('id'));
+                    if (!isNaN(carId)) {
+                        targetSectionId = 'car-details';
+                        displayCarDetails(carId);
+                    } else {
+                        // If car-details hash is malformed, default to inventory or home
+                        targetSectionId = 'inventory';
+                    }
+                } else {
+                    // For other simple hash links like #home, #inventory, #about, #contact
+                    targetSectionId = hash.substring(1); // Remove '#'
+                }
+            }
+
+            const targetSection = document.getElementById(targetSectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section'); // Show the target section
+                // If navigating to inventory or home, ensure content is loaded
+                if (targetSectionId === 'home') {
+                    displayFeaturedCars();
+                } else if (targetSectionId === 'inventory') {
+                    displayInventory();
+                }
+            } else {
+                // If an invalid hash is provided, default to home
+                document.getElementById('home').classList.remove('hidden-section');
+                displayFeaturedCars();
+            }
+
+            // Close mobile menu if open
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger-menu');
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+
+            // Update active state for nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${targetSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // --- Event Listeners for DOMContentLoaded and Hash Changes ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Attach hamburger menu toggle to the button
+            const hamburgerBtn = document.querySelector('.hamburger-menu');
+            if (hamburgerBtn) {
+                hamburgerBtn.addEventListener('click', toggleHamburgerMenu);
+            }
+
+            // Attach form submission listener
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', validateContactForm);
+            }
+
+            // Handle initial page load based on hash or default to home
+            handleNavigation();
+        });
+
+        // Listen for hash changes to navigate between sections
+        window.addEventListener('hashchange', handleNavigation);
+    </script>
+</body>
+</html>
